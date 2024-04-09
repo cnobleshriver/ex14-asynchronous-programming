@@ -88,9 +88,11 @@ function deleteTask(taskIndex, callback) {
 
 function markAsCompleted(taskIndex, callback) {
   // You will need to add something here...
+  loadingElement.textContent = "Marking task as completed...";
   setTimeout(
     () => {
       // You will need to add something here...
+      loadingElement.textContent = "";
       tasks[taskIndex].completed = !tasks[taskIndex].completed;
       callback(tasks);
     },

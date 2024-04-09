@@ -94,10 +94,12 @@ function deleteTask(taskIndex) {
 
 function markAsCompleted(taskIndex) {
   // You will need to add something here...
+  loadingElement.textContent = "Marking task as completed...";
   return new Promise((resolve, reject) => {
     setTimeout(
       () => {
         // You will need to add something here...
+        loadingElement.textContent = "";
         tasks[taskIndex].completed = true;
         resolve(tasks);
       },
