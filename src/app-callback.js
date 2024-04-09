@@ -17,9 +17,11 @@ const loadingElement = document.getElementById("loading-display");
 // TASK #5: Display "Deleting task..."
 function getTasks(callback) {
   // You will need to add something here...
+  loadingElement.textContent = "Loading tasks...";
   setTimeout(
     () => {
       // You will need to add something here...
+      loadingElement.textContent = "";
       callback(tasks);
     },
     Math.random() * 2000 + 1000,
@@ -60,9 +62,11 @@ function displayTasks(taskList) {
 
 function addTask(task, callback) {
   // You will need to add something here...
+  loadingElement.textContent = "Adding task...";
   setTimeout(
     () => {
       // You will need to add something here...
+      loadingElement.textContent = "";
       tasks.push(task);
       callback(tasks);
     },

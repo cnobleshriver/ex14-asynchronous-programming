@@ -17,10 +17,12 @@ const loadingElement = document.getElementById("loading-display");
 // TASK #5: Display "Deleting task..."
 async function getTasks() {
   // You will need to add something here...
+  loadingElement.textContent = "Loading tasks...";
   return new Promise((resolve, reject) => {
     setTimeout(
       () => {
         // You will need to add something here...
+        loadingElement.textContent = "";
         resolve(tasks);
       },
       Math.random() * 2000 + 1000,
@@ -64,10 +66,12 @@ function displayTasks(taskList) {
 
 function addTask(task) {
   // You will need to add something here...
+  loadingElement.textContent = "Adding task...";
   return new Promise((resolve, reject) => {
     setTimeout(
       () => {
         // You will need to add something here...
+        loadingElement.textContent = "";
         tasks.push(task);
         resolve(tasks);
       },
