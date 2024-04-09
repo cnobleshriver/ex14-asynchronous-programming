@@ -82,10 +82,12 @@ function addTask(task) {
 
 function deleteTask(taskIndex) {
   // You will need to add something here...
+  loadingElement.textContent = "Deleting task...";
   return new Promise((resolve, reject) => {
     setTimeout(
       () => {
         // You will need to add something here...
+        loadingElement.textContent = "";
         tasks.splice(taskIndex, 1);
         resolve(tasks);
       },

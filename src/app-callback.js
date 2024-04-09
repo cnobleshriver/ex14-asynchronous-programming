@@ -76,9 +76,11 @@ function addTask(task, callback) {
 
 function deleteTask(taskIndex, callback) {
   // You will need to add something here...
+  loadingElement.textContent = "Deleting task...";
   setTimeout(
     () => {
       // You will need to add something here...
+      loadingElement.textContent = "";
       tasks.splice(taskIndex, 1);
       callback(tasks);
     },
